@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nikki 💗</title>
+
+<style>
+body{
+  margin:0;
+  background:black;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  flex-direction:column;
+  color:white;
+  font-family:sans-serif;
+}
+
+.message{
+  font-size:30px;
+  text-align:center;
+  z-index:2;
+}
+
+.big-heart{
+  font-size:90px;
+  cursor:pointer;
+  margin-top:20px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index:2;
+}
+
+video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+  z-index:5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="message" id="text">
+Hello Nikki, I have something for you 💗
+</div>
+
+<div class="big-heart" id="heart">💗</div>
+
+<video id="video">
+<source src="yourvideo.mp4" type="video/mp4">
+</video>
+
+<script>
+const heart = document.getElementById("heart");
+const text = document.getElementById("text");
+const video = document.getElementById("video");
+
+heart.addEventListener("click", function(){
+
+  // Zoom effect
+  heart.style.transform = "scale(25)";
+  
+  // Fade out
+  heart.style.opacity = "0";
+  text.style.opacity = "0";
+
+  setTimeout(function(){
+    heart.style.display="none";
+    text.style.display="none";
+    video.style.display="block";
+    video.play();
+  },600);
+
+});
+</script>
+
+</body>
+</html>
